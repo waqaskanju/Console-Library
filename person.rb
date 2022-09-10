@@ -1,7 +1,8 @@
-# frozen_string_literal: true
+require_relative './nameable'
 
 # Description/Explanation of Person class
-class Person
+# Turn your Person class to Nameable
+class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
 
@@ -16,6 +17,11 @@ class Person
     value = false
     value = true if @parent_permission == true || of_age?
     value
+  end
+
+  # to implement the interface
+  def correct_name
+    puts @name
   end
 
   private
