@@ -4,7 +4,8 @@ require_relative './person'
 
 # Defination of Teacher Class
 class Teacher < Person
-  def intitialize(*_args, specialization)
+  def intitialize(*args, specialization)
+    super(*args)
     @specialization = specialization
   end
 
@@ -12,3 +13,6 @@ class Teacher < Person
     true
   end
 end
+
+tr = Teacher.new(20, 'Vet')
+p tr

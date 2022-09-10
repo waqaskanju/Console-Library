@@ -7,10 +7,12 @@ class Student < Person
   def initialize(*args, classroom)
     super(*args)
     @classroom = classroom
-    @parent_permission = parent_permission
   end
 
   def play_hooky
     puts "¯\(ツ)/¯"
   end
 end
+
+std = Student.new(15, '7th')
+p std
