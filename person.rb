@@ -1,4 +1,4 @@
-require_relative './nameable'
+require './nameable'
 
 # Description/Explanation of Person class
 # Turn your Person class to Nameable
@@ -20,9 +20,9 @@ class Person < Nameable
     value
   end
 
-  # to implement the interface
+  # implemented the interface
   def correct_name
-    puts @name
+    @name
   end
 
   private
@@ -33,9 +33,3 @@ class Person < Nameable
     value
   end
 end
-
-# single parameter
-me = Person.new(16)
-
-# Return of can_use_services?
-p me.can_use_services?

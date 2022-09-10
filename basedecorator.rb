@@ -1,3 +1,4 @@
+require_relative './nameable'
 # This class implements the Prepare base Decorator requirments.
 class BaseDecorator < Nameable
   attr_accessor :nameable
