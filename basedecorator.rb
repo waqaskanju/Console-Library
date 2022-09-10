@@ -4,6 +4,7 @@ class BaseDecorator < Nameable
 
   #  assign a nameable object from params to an instance variable
   def initialize(nameable)
+    super()
     @nameable = nameable
   end
 
