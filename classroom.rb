@@ -8,8 +8,7 @@ class Classroom
 
   def initialize(label)
     @label = label
-    # an empty arrray to add many students to this
-    # class
+    # an empty arrray to add many students to this class
     @students = []
   end
 

@@ -1,9 +1,9 @@
+require_relative './rental'
 # Create a class Book
 class Book
   # add @title and @author instance variables,
   # should be initialized in the constructor
-  attr_accessor :title, :author
-  attr_reader :rentals
+  attr_accessor :title, :author, :rentals
 
   def initialize(title, author)
     @title = title
@@ -11,8 +11,9 @@ class Book
     @rentals = []
   end
 
-  def add_rental(rental)
+  def add_rental(person, date)
+    rental = Rental.new(date, person, self)
     @rentals.push(rental)
-    rental.book = self
+    @rentals << rental unless rentals.includes?(rental)
   end
 end
