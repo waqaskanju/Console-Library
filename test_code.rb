@@ -1,13 +1,19 @@
 require_relative './person'
-require_relative './capitalizedecorator'
-require_relative './trimmerdecorator'
+require_relative './book'
+require_relative './classroom'
+require_relative './rental'
 
-person = Person.new(22, 'maximilianus')
-puts 'Initial name'
-p person.correct_name
-capitalized_person = CapitalizeDecorator.new(person)
-puts 'Capitalize Name'
-p capitalized_person.correct_name
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-puts 'Trimmed Name'
-p capitalized_trimmed_person.correct_name
+person_1 = Person.new('waqas', 19)
+person_2 = Person.new('Ali', 5)
+
+book_1 = Book.new('Game of thrones', 'J Martin')
+book_2 = Book.new('Lord of ring', 'Ruby')
+
+p classroom = Classroom.new('6th')
+
+p rental_1 = Rental.new('2020-01-02', person_1, book_1)
+p rental_2 = Rental.new('2022-01-02', person_1, book_2)
+
+p person_1.rentals.count
+
+person_1.rentals.map { |rental| p rental.date }
