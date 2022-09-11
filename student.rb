@@ -3,7 +3,7 @@ require_relative './person'
 # Defination of Student Class
 class Student < Person
   # for one-to-many relationship
-  attr_accessor :classroom
+  attr_reader :classroom
 
   def initialize(*args, classroom)
     super(*args)
