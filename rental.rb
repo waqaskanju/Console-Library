@@ -13,6 +13,7 @@ class Rental
     book.rentals << self
   end
 
+  # For show rentals , it is called from gui
   def rentals
     "#{@book.title}: #{@person.name} #{@date}"
   end
