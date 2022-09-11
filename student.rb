@@ -22,3 +22,6 @@ class Student < Person
     puts "¯\(ツ)/¯"
   end
 end
+
+# For Testing...
+# p std = Student.new(24,"akhbar",false,"6th")

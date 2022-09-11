@@ -3,7 +3,7 @@
 module App
   def list_books(books)
     if books.empty?
-      puts 'NO BOOKS REGISTERED!'
+      puts 'Books not added.'
     else
       books.each do |book|
         puts "Book Title: #{book.title}"

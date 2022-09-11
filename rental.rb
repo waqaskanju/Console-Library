@@ -3,7 +3,7 @@ class Rental
   # Setter and getter for @date
   attr_accessor :date, :book, :person
 
-  def initialize(person, book, date=Time.now)
+  def initialize(book, person, date = Time.now)
     @date = date
 
     @person = person
@@ -11,5 +11,9 @@ class Rental
 
     @book = book
     book.rentals << self
+  end
+
+  def rentals
+    "#{@book.title}: #{@person.name} #{@date}"
   end
 end

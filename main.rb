@@ -1,5 +1,5 @@
 require './app'
-require './books'
+require './book'
 require './student'
 require './teacher'
 require './rental'
@@ -34,7 +34,7 @@ class Main
       list_books(@books)
       main
     when '2'
-      list_peoples(@peoples)
+      list_persons(@peoples)
       main
     when '6'
       filter_rental
@@ -95,7 +95,7 @@ class Main
     print 'Classroom: '
     classroom = gets.chomp
     parent_permission = get_permission(permission)
-    create_people(@peoples, Student.new(classroom, age, name, parent_permission: parent_permission))
+    create_person(@peoples, Student.new(age, name, parent_permission, classroom))
     puts "New Student added sucessfully! \n\n\n"
   end
 
@@ -107,7 +107,7 @@ class Main
     age = gets.chomp
     print 'Specialization: '
     specialization = gets.chomp
-    create_people(@peoples, Teacher.new(specialization, age, name))
+    create_person(@peoples, Teacher.new(age, name, specialization))
     puts "New Teacher added Successfully! \n\n\n"
   end
 
@@ -117,7 +117,7 @@ class Main
     title = gets.chomp
     print 'Book Author: '
     author = gets.chomp
-    create_book(@books, Books.new(title, author))
+    create_book(@books, Book.new(title, author))
     puts "New book added successfully! \n\n"
   end
 
