@@ -2,25 +2,23 @@ require_relative './person'
 
 # Defination of Student Class
 class Student < Person
-
   # for one-to-many relationship
   attr_accessor :classroom
-  
+
   def initialize(*args, classroom)
     super(*args)
     @classroom = classroom
   end
-  
-  # To adopt to both way relatioship 
+
+  # To adopt to both way relatioship
   # when setting the classroom for a student it also adds it to the classrooms' students.
-  
+
   def classroom=(classroom)
-        @classroom = classroom
-        classroom.students.push(self) unless classroom.student.include(self)
+    @classroom = classroom
+    classroom.students.push(self) unless classroom.student.include(self)
   end
 
   def play_hooky
     puts "¯\(ツ)/¯"
   end
 end
-

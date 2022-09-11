@@ -1,28 +1,27 @@
 # Create a class Rental
 class Rental
-    
-    # Setter and getter for @date 
-    attr_accessor :date, :book, :person
+  # Setter and getter for @date
+  attr_accessor :date, :book, :person
 
-    attr_reader :person
-    
-    def initialize(date, person, book)
-        @date = date
+  attr_reader :person
 
-        @person = person
-        person.rentals << self
+  def initialize(date, person, book)
+    @date = date
 
-        @book = book
-        book.rentals << self
-    end
+    @person = person
+    person.rentals << self
 
-    def book=(book)
-        @book = book
-        book.rentals.push(self) unless book.rentals.include?(self)
-    end 
+    @book = book
+    book.rentals << self
+  end
 
-    def person=(person)
-        @person = person
-        person.rentals.push(self) unless person.rentals.include?(self)
-    end 
+  def book=(book)
+    @book = book
+    book.rentals.push(self) unless book.rentals.include?(self)
+  end
+
+  def person=(person)
+    @person = person
+    person.rentals.push(self) unless person.rentals.include?(self)
+  end
 end
